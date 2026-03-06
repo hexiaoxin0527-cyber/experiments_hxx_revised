@@ -1,8 +1,7 @@
 sca
 
-% NB: In order for this to work, check that the buad rate of the USB serial
-% port (COM4 at the time of writing) is set to 115200 (Device Manager >
-% Ports > USB Serial Port > Port settings
+% 注意：为使此脚本正常运行，请确认USB串口（编写时为COM4）的波特率
+% 已设置为115200（设备管理器 > 端口 > USB串行端口 > 端口设置）
 
 
 prior_path = pwd;
