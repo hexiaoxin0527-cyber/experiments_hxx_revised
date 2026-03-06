@@ -1,0 +1,1 @@
+delete(findobj('Type', 'figure'));

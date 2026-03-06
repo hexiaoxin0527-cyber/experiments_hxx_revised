@@ -1,0 +1,3 @@
+
+Read the actual PID in getwriting
+Revert proj_path in getwriting
