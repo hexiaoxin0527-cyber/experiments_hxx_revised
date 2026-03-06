@@ -4,13 +4,13 @@ function dd_instr
 % Display instructions for the EEG task
 
 instr_txt = {
-    'Now you will make a series of hypothetical monetary decisions. You will be asked whether you would prefer $40 now (the "immediate option") or another amount later (a "later option").'
-    'Before each decision, you will be told the delay and amount of the current "later option" (for example, $70 in 40 days). Then you will be prompted with the word "Choice?" When this prompt appears, press "1" or "2" to specify if you would prefer the "immediate option" (which is always $40 now) or the "later option" (which, in this example, would be $70 in 40 days). You can also skip the decision by pressing "3" (e.g., if you forgot what the "later option" was). There are no right or wrong answers.'
-    'Note: the words "$40 now" will not be displayed during the task, it will just be called the "immediate option". So you will have to remember that you are choosing between current "later option" (which will be displayed at the beginning of every trial) and $40 now.'
-    'During some decisions, the title of a future event you came up with will be displayed. When this happens, you will be asked whether the title prompted a vivid mental image of the future event. Press 1, 2, 3, or 4 to specify your answer. 1 means you had no mental image and 4 means your mental image was as clear and vivid as real life.'
-    'Note: the vividness question is asking, "Did you have a vivid mental image when the title was displayed?" It is not asking whether you can vividly imagine the scenario afterward, while you are answering the vividness question.'
-    'To make your responses, let the 4 fingers of your left hand sit on top of the number keys 1 to 4 so that your little finger is on the 1 and your index finger is on the 4. Please do not make significant arm movements during the task, since this will introduce noise into the data.'
-    'We will begin with a practice round consisting of 4 trials. The real task will consist of 160 trials. Please ask the experimenter if you have any questions.'
+    '现在，您将做出一系列假设性的金钱决策。您将被询问是否更倾向于立即获得40美元（"立即选项"），还是选择在未来某时获得另一笔金额（"延迟选项"）。'
+    '在每次决策之前，您将被告知当前"延迟选项"的延迟时间和金额（例如，40天后获得70美元）。然后屏幕会出现"选择？"的提示。当该提示出现时，请按"1"或"2"来表明您更倾向于"立即选项"（始终为立即获得40美元）还是"延迟选项"（在本例中为40天后获得70美元）。您也可以按"3"跳过该决策（例如，当您忘记"延迟选项"是什么时）。没有对错之分。'
+    '注意："立即获得40美元"不会在任务中显示，它仅会被称为"立即选项"。因此，您需要记住您是在当前的"延迟选项"（将在每次试验开始时显示）和立即获得40美元之间做出选择。'
+    '在某些决策中，会显示您之前想到的一个未来事件的标题。出现这种情况时，您将被询问该标题是否激发了对未来事件的生动心理图像。请按1、2、3或4来表明您的答案。1表示没有心理图像，4表示您的心理图像与现实生活一样清晰和生动。'
+    '注意：生动程度问题询问的是"当标题显示时，您是否产生了生动的心理图像？"它不是在询问您在回答生动程度问题时是否能够生动地想象该场景。'
+    '在做出反应时，请将左手的4根手指放在数字键1到4上，使您的小拇指位于1键，食指位于4键。请在任务过程中不要做出大幅度的手臂动作，因为这会给数据引入噪音。'
+    '我们将从包含4次试验的练习轮开始。正式任务将包含160次试验。如有任何问题，请询问实验者。'
 };
 unit = 0.1;
 fs = 15;
@@ -43,16 +43,16 @@ while true
     end
     uicontrol(f,...
         'Style', 'pushbutton',...
-        'String', 'Previous',...
+        'String', '上一页',...
         'Enable', enable,...
         'FontSize', fs,...
         'Units', 'normalized',...
         'Position', [0 0 0.5 unit],...
         'Callback', @(h, e) increment(f, -1));
     if ud.idx == numel(ud.txt)
-        str = 'Begin practice';
+        str = '开始练习';
     else
-        str = 'Next';
+        str = '下一页';
     end
     uicontrol(f,...
         'Style', 'pushbutton',...

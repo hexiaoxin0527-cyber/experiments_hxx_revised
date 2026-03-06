@@ -76,7 +76,7 @@ trials = [trials curr_trial];
 n_cd_secs = 3;
 while n_cd_secs > 0
     Screen('FillRect', wPtr, black);
-    DrawFormattedText(wPtr, sprintf('Practice will begin in\n\n%d', n_cd_secs), 'center', 'center', white);
+    DrawFormattedText(wPtr, sprintf('练习将在\n\n%d\n\n秒后开始', n_cd_secs), 'center', 'center', white);
     Screen('Flip', wPtr);
     WaitSecs(1);
     n_cd_secs = n_cd_secs - 1;
@@ -104,7 +104,7 @@ for trial_idx = 1:numel(trials)
     Screen('Flip', wPtr);
     WaitSecs(1 + 0.5*rand);
     % Delay
-    txt = sprintf('%d days', trials(trial_idx).del);
+    txt = sprintf('%d天', trials(trial_idx).del);
     DrawFormattedText(wPtr, txt, 'center', 'center', white);
     Screen('Flip', wPtr);
     WaitSecs(2);
@@ -122,9 +122,9 @@ for trial_idx = 1:numel(trials)
     WaitSecs(1 + 0.5*rand);
     % Choice
     if trials(trial_idx).rev_opts
-        DrawFormattedText(wPtr, sprintf('Choice?\n\n1: Later option\n\n2: Immediate option\n\n3: Skip'), 'center', 'center', white);
+        DrawFormattedText(wPtr, sprintf('选择？\n\n1: 延迟选项\n\n2: 立即选项\n\n3: 跳过'), 'center', 'center', white);
     else
-        DrawFormattedText(wPtr, sprintf('Choice?\n\n1: Immediate option\n\n2: Later option\n\n3: Skip'), 'center', 'center', white);
+        DrawFormattedText(wPtr, sprintf('选择？\n\n1: 立即选项\n\n2: 延迟选项\n\n3: 跳过'), 'center', 'center', white);
     end
     Screen('Flip', wPtr);
     while true
@@ -141,7 +141,7 @@ for trial_idx = 1:numel(trials)
     end
     % Query vividness?
     if trials(trial_idx).cued
-        DrawFormattedText(wPtr, sprintf('Vivid?\n\n1: No image\n\n4: Image as clear and\nvivid as real life'), 'center', 'center', white);
+        DrawFormattedText(wPtr, sprintf('生动？\n\n1: 无图像\n\n4: 图像如现实生活一样清晰生动'), 'center', 'center', white);
         Screen('Flip', wPtr);
         while true
             [key_down, key_time, key_code] = KbCheck;
@@ -172,6 +172,6 @@ end
 sca
 ListenChar(0);
 
-fprintf('Practice run complete!\n');
+fprintf('练习完成！\n');
 
 end
